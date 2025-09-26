@@ -1,0 +1,46 @@
+// Primary colors
+$primary-color: #3498db;       // Main theme color
+$secondary-color: #2ecc71;     // Accent / success color
+$danger-color: #e74c3c;        // Error / warning color
+$background-color: #f5f5f5;    // Default page background
+$text-color: #333;              // Default text color
+$light-color: #fff;             // Light / white color
+$dark-color: #222;              // Dark / headings
+
+
+// Font families
+$font-base: 'Arial, sans-serif';
+$font-heading: 'Roboto, sans-serif';
+
+// Font sizes
+$font-size-sm: 12px;
+$font-size-md: 16px;
+$font-size-lg: 20px;
+$font-size-xl: 32px;
+
+
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+// Padding / margin shortcut
+$padding-base: $spacing-md;
+$margin-base: $spacing-md;
+
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+$breakpoint-desktop: 1200px;
+
+//Heading (h1-h6)
+
+$h1-size: 48px;   // 48px
+$h2-size: 2.5rem; // 40px
+$h3-size: 2rem;   // 32px
+$h4-size: 1.75rem; // 28px
+$h5-size: 1.5rem; // 24px
+$h6-size: 1.25rem; // 20px
+$p-size: 1rem;     // 16px

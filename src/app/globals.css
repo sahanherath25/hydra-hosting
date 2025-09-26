@@ -1,0 +1,52 @@
+
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: auto;
+    /*required for percentage heights to work margin: 0; */
+    padding: 0;
+    margin: 0;
+    color: var(--foreground);
+}
+
+body {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    border:2px solid darkred;
+}
+
+/* Links */
+a {
+    color:black;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+

@@ -1,0 +1,8 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+
+h1{
+  font-size: $h1-size;
+  color:#19183B ;
+}
