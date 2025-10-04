@@ -42,11 +42,11 @@ body {
 
 /* Links */
 a {
-    color:black;
+    /*color:black;*/
     text-decoration: none;
 
     &:hover {
-        text-decoration: underline;
+        /*text-decoration: underline;*/
     }
 }
 
