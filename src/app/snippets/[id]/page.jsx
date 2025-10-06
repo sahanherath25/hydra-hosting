@@ -4,6 +4,7 @@ import {notFound} from "next/navigation";
 import {ObjectId} from "bson";
 import Link from "next/link";
 import * as actions from "@/actions/index"
+import prisma from "../../../../prisma";
 
 const SnippetsDetailPage = async ({params, searchParams}) => {
 
@@ -75,6 +76,27 @@ const SnippetsDetailPage = async ({params, searchParams}) => {
         </div>
     );
 };
+
+
+export const generateStaticParams=async ()=>{
+
+//     TODO Need to return an Object must have the id property
+//    TODO   id property should match with tha parameter ame we given
+
+    // TODO Getting all snippets
+    const snippets=await prisma.snippet.findMany();
+
+
+    // TODO Mapping to return  the id
+    return snippets.map((snippet)=>{
+        // TODO
+        return {
+            // Next expect to get values for id as string
+            id: snippet.id,
+        }
+    })
+
+}
 
 export default SnippetsDetailPage;
 

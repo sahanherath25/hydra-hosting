@@ -3,6 +3,7 @@
 import {redirect} from "next/navigation";
 import {connectDB} from "@/lib/helpers";
 import {c} from "react/compiler-runtime";
+import {revalidatePath} from "next/cache";
 
 // export const createSnippet = async (formState, formData) => {
 //
@@ -114,6 +115,10 @@ export const createSnippet = async (formState, formData) => {
         }
 
     }
+
+    // TODO If we create  a snippet that should be show and home page need to be re-render
+    revalidatePath(`/snippets`)
+
     redirect("/")
 
 }
@@ -130,6 +135,7 @@ export const editSnippet = async (snippetId, updatedCode) => {
             data: {code: updatedCode}
         })
 
+    revalidatePath(`/snippets/${snippetId}`)
     redirect(`/snippets/${snippetId}`)
 
 }
@@ -139,6 +145,9 @@ export const deleteSnippet = async (snippetId, updatedCode) => {
     await prisma.snippet.delete({
         where: {id: snippetId}
     })
+
+    // TODO If we delete a snippet home page need to be re-render again
+    revalidatePath(`/snippets`)
 
     // TODO Redirect User To the Main Page
     redirect(`/snippets`)
