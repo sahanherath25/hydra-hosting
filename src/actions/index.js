@@ -108,10 +108,10 @@ export const createSnippet = async (formState, formData) => {
         if(err instanceof Error) {
 
             console.log("Error ", err)
-            return { errors: { general: "Something went wrong" } };
+            return { errors: { general: err} };
         }else {
 
-            return { message: "Something Went Wrong" }
+            return { message: err }
         }
 
     }
@@ -119,7 +119,7 @@ export const createSnippet = async (formState, formData) => {
     // TODO If we create  a snippet that should be show and home page need to be re-render
     revalidatePath(`/snippets`)
 
-    redirect("/")
+    redirect("/snippets")
 
 }
 
@@ -147,6 +147,7 @@ export const deleteSnippet = async (snippetId, updatedCode) => {
     })
 
     // TODO If we delete a snippet home page need to be re-render again
+
     revalidatePath(`/snippets`)
 
     // TODO Redirect User To the Main Page
