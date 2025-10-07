@@ -2,8 +2,8 @@
 
 import {redirect} from "next/navigation";
 import {connectDB} from "@/lib/helpers";
-import {c} from "react/compiler-runtime";
 import {revalidatePath} from "next/cache";
+import prisma from "../../prisma";
 
 // export const createSnippet = async (formState, formData) => {
 //
